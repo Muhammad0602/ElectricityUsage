@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --open",   
+    "start": "webpack serve --open",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d build",
     "build": "webpack"
   },
   "keywords": [],
@@ -15,6 +15,7 @@
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.7.3",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
