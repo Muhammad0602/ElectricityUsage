@@ -3,11 +3,11 @@ import { usersInfo } from './usersInfo.js';
 import popup from './popup.js';
 
 const mainContainer = document.querySelector('.main-container');
-const users = document.querySelector('#users');
+// const users = document.querySelector('#users');
 const logBtn = document.querySelector('#log-btn')
 const overlay = document.querySelector('#overlay');
 
-users.addEventListener('change', chooseUser);
+// users.addEventListener('change', chooseUser);
 logBtn.addEventListener('click', () => {
    popup();
    overlay.classList.add('active');
@@ -21,8 +21,11 @@ logBtn.addEventListener('click', () => {
 
    const form = document.querySelector('#login-form'); 
    form.addEventListener('submit', (e) => {
-    e.preventDefault();
-   const idInput = document.querySelector('#modal-input');
+     e.preventDefault();
+     const idInput = document.querySelector('#modal-input');
+     chooseUser(idInput);
+     document.body.removeChild(model);
+     overlay.classList.remove('active');
 })
 
 
@@ -52,14 +55,14 @@ const renderAll = () => {
 renderAll();
 
 function chooseUser(e) {
-        switch(e.target.value) {
-        case 'user1': 
+        switch(e.value) {
+        case '111222333': 
             mainContainer.innerHTML = article(usersInfo[0], 0)
-           break;``
-        case 'user2': 
+           break;
+        case '111222334': 
             mainContainer.innerHTML = article(usersInfo[1],1)
            break;
-        case 'user3': 
+        case '111222335': 
             mainContainer.innerHTML = article(usersInfo[2], 2)
            break;
         
