@@ -1,53 +1,44 @@
 import './style.css';
-import { usersInfo } from '../usersInfo';
-import { Temporal } from '@js-temporal/polyfill';
+import { usersInfo } from './usersInfo.js';
+import popup from './popup.js';
 
 const mainContainer = document.querySelector('.main-container');
 const users = document.querySelector('#users');
-
-
-
-// function chooseDay() {
-//     const today = Temporal.Now.plainDateISO().toString();
-//     const index = 0;
-//     if(today === "2023-03-27") { index = 1;} 
-//     else if (today === "2023-03-28") { index = 2};
-//     return index;
-// }
+const logBtn = document.querySelector('#log-btn')
+const overlay = document.querySelector('#overlay');
 
 users.addEventListener('change', chooseUser);
+logBtn.addEventListener('click', () => {
+   popup();
+   overlay.classList.add('active');
+   const closeBtn = document.getElementById("close-btn");
+   const model = document.querySelector('.modal');
+
+   closeBtn.addEventListener('click', () => {
+      document.body.removeChild(model);
+      overlay.classList.remove('active');
+   })
+
+   const form = document.querySelector('#login-form'); 
+   form.addEventListener('submit', (e) => {
+    e.preventDefault();
+   const idInput = document.querySelector('#modal-input');
+})
+
+
+
+});
 
 const article = ((user, id) => {
-
-    const today = Temporal.Now.plainDateISO().toString();
-    let index;
-    switch(today) {
-        case "2023-03-27":
-            index = 1;
-            break;
-        case "2023-03-28":
-            index = 2;
-            break;
-        case "2023-03-29":
-            index = 3;
-            break;
-        case "2023-03-30":
-            index = 4;
-            break;
-        case "2023-03-31":
-            index = 5;
-            break;   
-        default: 
-           index = 0;
-           break;    
-    }
-
+    const today = new Date().getUTCDate();
+   
     return `
      <article class="container" id="${id}">
+       <div class="account">Personal Account: ${user.account}</div>
        <div class="address">Address:${user.Address}</div>
-       <div class="name">FullName: ${user['Full Name']}</div>
+       <div class="name">Full Name: ${user['Full Name']}</div>
        <div class="date">Date: ${user.Date}</div>
-       <div class="reading">Reading: ${user.Reading[index]}</div>
+       <div class="reading">Reading: ${user.Reading[today-1]}</div>
      </article>
      `
  })

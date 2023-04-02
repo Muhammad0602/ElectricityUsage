@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monitoring the electricity usage of the json file(haha just for now)</title>
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="script.js" defer></script>
+    <script type="module" src="index.js" defer></script>
 </head>
 <body>
+    <button id="log-btn">Log In</button>
     <div class="users">
         <label for="users">Users:</label>
         <select name="users" id="users">
-            <option value="user0">All</option>
             <option value="user1">Davlatov D.</option>
             <option value="user2">Sodikov B.</option>
             <option value="user3">Pirov Y.</option>
@@ -20,5 +20,7 @@
     </div>
     <div class="main-container">
     </div>
+    <div id="overlay"></div>
+    <script src="https://kit.fontawesome.com/6c5e526e53.js" crossorigin="anonymous"></script>
 </body>
 </html>
