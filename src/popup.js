@@ -8,7 +8,7 @@ export default function popup() {
     <h4>Welcome to Our page, please provide your personal account to log in.</h4>
     <form id="login-form">
         <input type="number" id="modal-input" placeholder="personal account" required />
-        <button type="submit" class="modal-btn">Sign In</button>
+        <button type="submit" class="modal-btn btn">Sign In</button>
     </form>
     `
     document.body.appendChild(modal);

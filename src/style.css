@@ -5,11 +5,32 @@
 }
 
 body {
-    background-color: rgb(117, 117, 30);
+    background-color: white;
+    font-family:'Courier New', Courier, monospace;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 2rem 3rem;
+    box-shadow: 0 5px 10px 3px black;
+}
+
+#article {
+    display: flex;
+    flex-direction: column;
+    /* background-color: rgb(233, 233, 240); */
+    margin-top: 3rem;
+    gap: 3rem;
+    font-size: 1.7rem;
+    padding: 2rem 1rem;
 }
 
 .main-container {
     display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -19,7 +40,7 @@ body {
     margin: 100px auto;
     gap: 50px;
     border-radius: 20px;
-    color: white;
+    color: black;
 }
 
 .container {
@@ -87,12 +108,43 @@ body {
     max-width: 25rem;
     min-height: 20rem;
     border-radius: 0.5rem;
+    background-image: linear-gradient(to right, rgb(16, 244, 221), rgb(128, 244, 107));
+    text-align: center;
+}
+
+.modal #close-btn {
+    position: relative;
+    top: 0.5rem;
+    left: 6rem;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
 }
 
 .modal #login-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    align-items: center;
+}
+
+#login-form #modal-input {
+    padding: 0.4rem 1rem;
+    border-radius: 0.2rem;
+}
+
+#login-form #modal-input:placeholder-shown {
+    font-style: italic;
+}
+
+#login-form .modal-btn {
+    background:rgb(4, 50, 2);
+    color: white;
+}
+
+#login-form .modal-btn:hover {
+    background-color: white;
+    color:rgb(4, 50, 2);
 }
 
 #overlay {
@@ -109,5 +161,22 @@ body {
   #overlay.active {
     pointer-events: all;
     opacity: 1;
+  }
+
+  .btn {
+    width: 5rem;
+    padding: 0.5rem 0.7rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.3rem;
+    background-color: rgb(105, 236, 105);;
+    color:black;
+    transition: all 0.6s ease-out;
+    border: none;
+  }
+
+  .btn:hover {
+    background-color: black;
+    color: rgb(105, 236, 105);
   }
   

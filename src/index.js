@@ -6,6 +6,7 @@ const mainContainer = document.querySelector('.main-container');
 // const users = document.querySelector('#users');
 const logBtn = document.querySelector('#log-btn')
 const overlay = document.querySelector('#overlay');
+const text = document.querySelector('#article');
 
 // users.addEventListener('change', chooseUser);
 logBtn.addEventListener('click', () => {
@@ -26,6 +27,8 @@ logBtn.addEventListener('click', () => {
      chooseUser(idInput);
      document.body.removeChild(model);
      overlay.classList.remove('active');
+     mainContainer.style.display = "flex";
+     text.style.display = 'none';
 })
 
 
@@ -46,13 +49,13 @@ const article = ((user, id) => {
      `
  })
 
-const renderAll = () => {
-    mainContainer.innerHTML = usersInfo.map((user, index) => {
-        return article(user, index);
-    }).join('');
+// const renderAll = () => {
+//     mainContainer.innerHTML = usersInfo.map((user, index) => {
+//         return article(user, index);
+//     }).join('');
 
-}
-renderAll();
+// }
+// renderAll();
 
 function chooseUser(e) {
         switch(e.value) {
@@ -67,7 +70,8 @@ function chooseUser(e) {
            break;
         
         default:
-            renderAll();
+            // renderAll();
+            mainContainer.innerHTML = article(usersInfo[0], 0)
             break;
         }         
 }
