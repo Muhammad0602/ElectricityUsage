@@ -173,6 +173,7 @@ header {
     color:black;
     transition: all 0.6s ease-out;
     border: none;
+    cursor: pointer;
   }
 
   .btn:hover {
