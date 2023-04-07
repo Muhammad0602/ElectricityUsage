@@ -40,11 +40,11 @@ const article = ((user, id) => {
    
     return `
      <article class="container" id="${id}">
-       <div class="account">Personal Account: ${user.account}</div>
-       <div class="address">Address:${user.Address}</div>
-       <div class="name">Full Name: ${user['Full Name']}</div>
-       <div class="date">Date: ${user.Date}</div>
-       <div class="reading">Reading: ${user.Reading[today-1]}</div>
+       <div class="info">Personal Account: <p>${user.account}</p></div>
+       <div class="info address">Address: <p>${user.Address}</p></div>
+       <div class="info">Full Name: <p>${user['Full Name']}</p></div>
+       <div class="info">Date: <p>${user.Date}</p></div>
+       <div class="info">Reading: <p>${user.Reading[today-1]}</p></div>
      </article>
      `
  })
