@@ -23,12 +23,14 @@ header {
 #article {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     background-image: linear-gradient(180deg, orange, aqua);
     color: rgb(253, 4, 41);   
     margin-top: 0.8rem;
     gap: 3rem;
     font-size: 1.7rem;
-    padding: 2rem 1rem;
+    padding: 2rem 3rem;
+    min-height: 100vh;
 }
 
 .main-container {
