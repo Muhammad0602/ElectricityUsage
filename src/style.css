@@ -203,7 +203,7 @@ header {
   
 @media only screen and (max-width: 600px) {
     header h1 {
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
 
     header .btn {
